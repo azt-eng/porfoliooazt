@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karifala Coulibaly | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+            },
+            colors: {
+              apple: {
+                blue: '#AB886D', // Brown/Taupe (Primary accent)
+                blueHover: '#D9A299', // Dusty rose (Hover state)
+                bgLight: '#FAF7F3', // Off-white/Very light beige (Background)
+                bgDark: '#2D2522', // Dark warm greyish brown (Dark mode background)
+                cardLight: '#F0E4D3', // Light beige (Cards)
+                cardDark: '#3D332F', // Slightly lighter dark warm grey (Dark mode cards)
+                textLight: '#5A4A42', // Dark brown for text on light bg
+                textDark: '#FAF7F3', // Light text
+                gray: '#A89586' // Darkened taupe for secondary text
+              }
+            },
+            borderRadius: {
+              'apple': '20px'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem; /* Accounts for the 80px (h-20) sticky header */
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .dark .text-apple-gray {
+        color: #F0E4D3 !important; /* Light beige for readability in dark mode */
+      }
+      .dark .border-apple-gray {
+        border-color: #F0E4D3 !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

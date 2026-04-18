@@ -1,0 +1,55 @@
+/* ===========================
+   TRANSITION SECTION STYLES
+   =========================== */
+
+.transition-section {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .transition-section {
+    height: 90vh;
+  }
+}
+
+.transition-section__bg-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.transition-section__bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.65);
+  transition: filter 0.5s ease;
+}
+
+.dark .transition-section__bg {
+  filter: brightness(0.5);
+}
+
+.transition-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 247, 243, 0.1),
+    transparent,
+    rgba(250, 247, 243, 0.1)
+  );
+}
+
+.dark .transition-section__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(45, 37, 34, 0.1),
+    transparent,
+    rgba(45, 37, 34, 0.1)
+  );
+}

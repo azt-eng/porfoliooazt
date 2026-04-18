@@ -1,0 +1,338 @@
+/* ===========================
+   HEADER COMPONENT STYLES
+   =========================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  background-color: rgba(250, 247, 243, 0.8); /* apple-bgLight/80 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+  transition: all 0.3s ease;
+}
+
+.dark .header {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom-color: #1f2937; /* gray-800 */
+}
+
+.header__inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo / Name */
+.header__logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header__logo:hover {
+  color: #AB886D;
+}
+
+/* Desktop Nav */
+.header__nav {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .header__nav {
+    display: flex;
+  }
+}
+
+.header__nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #A89586; /* apple-gray */
+  transition: color 0.3s ease;
+}
+
+.header__nav-link:hover {
+  color: #5A4A42; /* apple-textLight */
+}
+
+.dark .header__nav-link:hover {
+  color: #ffffff;
+}
+
+.header__nav-link--active {
+  color: #5A4A42;
+}
+
+.dark .header__nav-link--active {
+  color: #ffffff;
+}
+
+/* Right controls */
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Theme Toggle Button */
+.header__theme-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: #F0E4D3; /* apple-cardLight */
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.dark .header__theme-btn {
+  background-color: #3D332F; /* apple-cardDark */
+  border-color: #374151; /* gray-700 */
+}
+
+.header__theme-btn:hover {
+  border-color: #AB886D;
+}
+
+.dark .header__theme-btn:hover {
+  border-color: #AB886D;
+}
+
+.header__theme-icon {
+  font-size: 1.125rem;
+  transition: transform 0.5s ease;
+}
+
+.header__theme-icon--light {
+  transform: rotate(0deg);
+}
+
+.header__theme-icon--dark {
+  transform: rotate(360deg);
+}
+
+.header__theme-btn-hover {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: rgba(171, 136, 109, 0.05);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.header__theme-btn:hover .header__theme-btn-hover {
+  transform: scale(1);
+}
+
+/* CTA Button */
+.header__cta {
+  display: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background-color: #AB886D;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .header__cta {
+    display: block;
+  }
+}
+
+.header__cta:hover {
+  background-color: #D9A299;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.header__cta:active {
+  transform: scale(0.95);
+}
+
+/* Hamburger Button */
+.header__hamburger {
+  display: flex;
+  padding: 0.5rem;
+  margin-right: -0.5rem;
+  color: #5A4A42;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dark .header__hamburger {
+  color: #FAF7F3;
+}
+
+@media (min-width: 768px) {
+  .header__hamburger {
+    display: none;
+  }
+}
+
+.header__hamburger-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ===========================
+   MOBILE MENU
+   =========================== */
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .mobile-overlay {
+    display: none;
+  }
+}
+
+.mobile-overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-overlay--closed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 16rem;
+  background-color: #FAF7F3;
+  z-index: 50;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 24px rgba(0, 0, 0, 0.15);
+}
+
+.dark .mobile-menu {
+  background-color: #2D2522;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu--open {
+  transform: translateX(0);
+}
+
+.mobile-menu__header {
+  height: 5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .mobile-menu__header {
+  border-bottom-color: #1f2937;
+}
+
+.mobile-menu__close-btn {
+  padding: 0.5rem;
+  margin-right: -0.5rem;
+  color: #5A4A42;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dark .mobile-menu__close-btn {
+  color: #FAF7F3;
+}
+
+.mobile-menu__close-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.mobile-menu__link {
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #5A4A42;
+  transition: color 0.3s ease;
+}
+
+.dark .mobile-menu__link {
+  color: #FAF7F3;
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link--active {
+  color: #AB886D;
+}
+
+.mobile-menu__footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dark .mobile-menu__footer {
+  border-top-color: #1f2937;
+}
+
+.mobile-menu__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background-color: #AB886D;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu__cta:hover {
+  background-color: #D9A299;
+}

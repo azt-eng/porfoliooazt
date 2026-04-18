@@ -1,0 +1,133 @@
+/* ===========================
+   FOOTER COMPONENT STYLES
+   =========================== */
+
+.footer {
+  padding: 4rem 0;
+  background-color: #F0E4D3;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dark .footer {
+  background-color: rgba(45, 37, 34, 0.5);
+  border-top-color: #1f2937;
+}
+
+.footer__inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Ligne principale */
+.footer__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .footer__main {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Brand */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 28rem;
+}
+
+.footer__brand-name {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.footer__brand-desc {
+  color: #A89586;
+  margin: 0;
+}
+
+.dark .footer__brand-desc {
+  color: #9ca3af;
+}
+
+/* Navigation */
+.footer__nav-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .footer__nav-block {
+    text-align: right;
+    width: auto;
+  }
+}
+
+.footer__nav-label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #A89586;
+  margin: 0;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer__nav {
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.footer__nav-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.footer__nav-link:hover {
+  color: #AB886D;
+}
+
+/* Ligne du bas */
+.footer__bottom {
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #A89586;
+}
+
+.dark .footer__bottom {
+  border-top-color: #1f2937;
+}
+
+.footer__bottom p {
+  margin: 0;
+}
