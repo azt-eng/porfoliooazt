@@ -109,8 +109,22 @@ export const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* Pagination */}
+        {/* Pagination + flèches */}
         <div className="projects__pagination">
+
+          {/* Flèche gauche */}
+          <button
+            onClick={() => scrollToProject(Math.max(0, activeIndex - 1))}
+            disabled={activeIndex === 0}
+            className="projects__arrow-btn"
+            aria-label="Projet précédent"
+          >
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="projects__arrow-icon">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Dots */}
           <div className="projects__dots">
             {PROJECTS.map((_, index) => (
               <button
@@ -121,6 +135,19 @@ export const Projects: React.FC = () => {
               />
             ))}
           </div>
+
+          {/* Flèche droite */}
+          <button
+            onClick={() => scrollToProject(Math.min(PROJECTS.length - 1, activeIndex + 1))}
+            disabled={activeIndex === PROJECTS.length - 1}
+            className="projects__arrow-btn"
+            aria-label="Projet suivant"
+          >
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="projects__arrow-icon">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
         </div>
 
       </div>

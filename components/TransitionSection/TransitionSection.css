@@ -26,12 +26,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: brightness(0.65);
   transition: filter 0.5s ease;
-}
-
-.dark .transition-section__bg {
-  filter: brightness(0.5);
 }
 
 .transition-section__overlay {

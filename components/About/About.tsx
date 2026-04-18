@@ -3,10 +3,12 @@ import { motion } from 'motion/react';
 import './About.css';
 
 const ABOUT_IMAGES = [
-  "https://picsum.photos/seed/karifala1/800/800",
-  "https://picsum.photos/seed/karifala2/800/800",
-  "https://picsum.photos/seed/karifala3/800/800"
+  "/about/photo1.jpg",   // Photo fixe (IMG_7677 - souriant)
+  "/about/photo2.jpg",   // Portrait (ex DSC04311)
+  "/about/photo3.jpg",   // Basket
 ];
+
+
 
 export const About: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -18,6 +20,7 @@ export const About: React.FC = () => {
     const x = e.clientX - rect.left;
     const percentage = x / rect.width;
 
+    // 3 photos : tiers gauche/milieu/droit
     if (percentage < 0.33) {
       setActiveIndex(0);
     } else if (percentage < 0.66) {
@@ -50,7 +53,6 @@ export const About: React.FC = () => {
                   key={src}
                   src={src}
                   alt={`Karifala Coulibaly ${index + 1}`}
-                  referrerPolicy="no-referrer"
                   className={`about__img ${index === activeIndex ? 'about__img--visible' : 'about__img--hidden'}`}
                 />
               ))}

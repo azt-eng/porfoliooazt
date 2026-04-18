@@ -34,10 +34,10 @@
 /* Image side */
 .about__image-wrapper {
   position: relative;
-  max-width: 24rem;
-  margin: 0 auto;
+  width: 100%;
   cursor: ew-resize;
 }
+
 
 .about__image-glow {
   position: absolute;

@@ -221,6 +221,8 @@
 .projects__pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
   margin-top: 0.5rem;
 }
 
@@ -266,6 +268,47 @@
 .projects__dot:not(.projects__dot--active):hover {
   background-color: #6b7280;
 }
+
+/* Boutons flèches */
+.projects__arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #5A4A42;
+  flex-shrink: 0;
+}
+
+.dark .projects__arrow-btn {
+  background-color: #3D332F;
+  color: #FAF7F3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.projects__arrow-btn:not(:disabled):hover {
+  background-color: #AB886D;
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(171, 136, 109, 0.4);
+}
+
+.projects__arrow-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.projects__arrow-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
 
 /* ===========================
    MODAL / LIGHTBOX

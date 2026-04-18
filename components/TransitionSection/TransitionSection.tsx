@@ -15,8 +15,9 @@ export const TransitionSection: React.FC = () => {
         {/* Image de fond */}
         <div
           className="transition-section__bg"
-          style={{ backgroundImage: 'url("https://picsum.photos/seed/basketball-tech/1920/1080")' }}
+          style={{ backgroundImage: 'url("/cinematic.jpg")' }}
         />
+
 
         {/* Overlay dégradé */}
         <div className="transition-section__overlay" />
