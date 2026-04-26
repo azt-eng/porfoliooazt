@@ -17,7 +17,7 @@ const PROJECTS: Project[] = [
     title: "Développeur Web - Jeu instant Footlocker (2026)",
     description: "Nous avons dû développer un projet pour un client Footlocker.\n\nNous devions répondre à la problématique qui était de créer un jeu instant gagnant permettant de récolter de la data sur les clients (récolte d'emails).\n\nPour ça, nous avons dû :\n- Créer un concept de jeu instant gagnant\n- Faire une maquette du concept\n- Définir un parcours UX\n- Créer les différentes pages en HTML/CSS\n- Présenter au client notre solution",
     tags: ["HTML/CSS", "Figma", "UI/UX", "Web Dev"],
-    image: "image/FOOT_LOCKER_LOGO_9c7a6360-57c1-4226-95ea-d08b89d8b6b6.webp",
+    image: "/projects/fl.jpg",
     link: "#"
   },
   {
@@ -33,7 +33,7 @@ const PROJECTS: Project[] = [
     title: "Assistant gestion projet - Mitness (2025)",
     description: "J'ai aidé à coordonner une équipe de six personnes sur la création d'une campagne de communication pour une gamme de vêtements.\n\nPour réussir cela, nous avons réalisé :\n- le ciblage de la clientèle et la création d'un persona\n- l'étude du marché visé\n- la création de fiches produits\n- l'établissement d'un budget pour la communication\n- la conception de la campagne de communication",
     tags: ["Marketing", "Communication", "Stratégie", "Budget"],
-    image: "image/spiral.png",
+    image: "/projects/spiral.png",
     link: "#"
   },
   {
