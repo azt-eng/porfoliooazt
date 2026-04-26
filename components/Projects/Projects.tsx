@@ -17,7 +17,7 @@ const PROJECTS: Project[] = [
     title: "Développeur Web - Jeu instant Footlocker (2026)",
     description: "Nous avons dû développer un projet pour un client Footlocker.\n\nNous devions répondre à la problématique qui était de créer un jeu instant gagnant permettant de récolter de la data sur les clients (récolte d'emails).\n\nPour ça, nous avons dû :\n- Créer un concept de jeu instant gagnant\n- Faire une maquette du concept\n- Définir un parcours UX\n- Créer les différentes pages en HTML/CSS\n- Présenter au client notre solution",
     tags: ["HTML/CSS", "Figma", "UI/UX", "Web Dev"],
-    image: "/projects/fl.jpg",
+    image: "/projects/telechargement.png",
     link: "#"
   },
   {
