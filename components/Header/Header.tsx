@@ -48,10 +48,11 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           {/* Desktop Nav */}
           <nav className="header__nav">
-            <a href="#about"    className={getLinkClass('about')}>À propos</a>
-            <a href="#projects" className={getLinkClass('projects')}>Projets</a>
-            <a href="#skills"   className={getLinkClass('skills')}>Compétences</a>
-            <a href="#contact"  className={getLinkClass('contact')}>Contact</a>
+            <a href="#about"     className={getLinkClass('about')}>À propos</a>
+            <a href="#projects"  className={getLinkClass('projects')}>Projets</a>
+            <a href="#skills"    className={getLinkClass('skills')}>Compétences</a>
+            <a href="#expertise" className={getLinkClass('expertise')}>Mon Approche</a>
+            <a href="#contact"   className={getLinkClass('contact')}>Contact</a>
           </nav>
 
           {/* Right Controls */}
@@ -108,10 +109,11 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         </div>
 
         <nav className="mobile-menu__nav">
-          <a href="#about"    onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('about')}>À propos</a>
-          <a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('projects')}>Projets</a>
-          <a href="#skills"   onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('skills')}>Compétences</a>
-          <a href="#contact"  onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('contact')}>Contact</a>
+          <a href="#about"     onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('about')}>À propos</a>
+          <a href="#projects"  onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('projects')}>Projets</a>
+          <a href="#skills"    onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('skills')}>Compétences</a>
+          <a href="#expertise" onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('expertise')}>Mon Approche</a>
+          <a href="#contact"   onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('contact')}>Contact</a>
 
           <div className="mobile-menu__footer">
             <a
