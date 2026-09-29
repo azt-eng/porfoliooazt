@@ -35,6 +35,8 @@
 .about__image-wrapper {
   position: relative;
   width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
   cursor: ew-resize;
 }
 
@@ -120,4 +122,132 @@
 
 .dark .about__paragraph {
   color: #9ca3af; /* gray-400 */
+}
+
+/* Banner CTA */
+.about__cta-banner {
+  margin-top: 4rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(171, 136, 109, 0.25);
+  border-radius: 9999px;
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .about__cta-banner {
+    flex-direction: row;
+  }
+}
+
+.dark .about__cta-banner {
+  background-color: #3D332F;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about__cta-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.about__cta-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background-color: rgba(171, 136, 109, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #AB886D;
+}
+
+.about__cta-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2D2522;
+  margin: 0 0 0.25rem 0;
+}
+
+.dark .about__cta-title {
+  color: #FAF7F3;
+}
+
+.about__cta-subtitle {
+  font-size: 0.875rem;
+  color: #8C7A6D;
+  margin: 0;
+}
+
+.dark .about__cta-subtitle {
+  color: #B5A79B;
+}
+
+/* Boutons CTA */
+.about__cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about__btn-cv,
+.about__btn-projects {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  box-sizing: border-box;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.about__btn-cv {
+  gap: 0.5rem;
+  background-color: rgba(171, 136, 109, 0.1);
+  border: 1px solid rgba(171, 136, 109, 0.3);
+  color: #5A4A42;
+}
+
+.dark .about__btn-cv {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #FAF7F3;
+}
+
+.about__btn-cv:hover {
+  background-color: rgba(171, 136, 109, 0.2);
+  transform: translateY(-2px);
+}
+
+.about__btn-projects {
+  gap: 0.5rem;
+  background-color: #AB886D;
+  border: 1px solid transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(171, 136, 109, 0.35);
+}
+
+.about__btn-projects:hover {
+  background-color: #96745B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(171, 136, 109, 0.45);
+}
+
+.about__btn-icon {
+  width: 1.1rem;
+  height: 1.1rem;
 }

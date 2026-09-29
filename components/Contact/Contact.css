@@ -83,6 +83,24 @@
   transform: scale(0.98);
 }
 
+/* CV */
+.contact__btn--cv {
+  display: inline-flex;
+  gap: 0.5rem;
+  background-color: #5A4A42;
+  color: #ffffff;
+}
+
+.contact__btn--cv:hover {
+  background-color: #3D332F;
+  box-shadow: 0 10px 20px rgba(90, 74, 66, 0.4);
+}
+
+.contact__cv-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 /* Email */
 .contact__btn--email {
   background-color: #AB886D;
@@ -112,3 +130,4 @@
   height: 1.25rem;
   fill: currentColor;
 }
+

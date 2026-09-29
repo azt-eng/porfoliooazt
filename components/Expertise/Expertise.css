@@ -331,3 +331,39 @@
   position: relative;
   z-index: 10;
 }
+
+.expertise__content-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2D2522;
+  margin: 0 0 0.85rem 0;
+  line-height: 1.4;
+}
+
+.dark .expertise__content-heading {
+  color: #FAF7F3;
+}
+
+.expertise__content-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0 0 0.85rem 0;
+  color: #5A4A42;
+}
+
+.dark .expertise__content-paragraph {
+  color: #D1C7BD;
+}
+
+.expertise__content-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.expertise__content-paragraph strong {
+  font-weight: 700;
+  color: #2D2522;
+}
+
+.dark .expertise__content-paragraph strong {
+  color: #FAF7F3;
+}

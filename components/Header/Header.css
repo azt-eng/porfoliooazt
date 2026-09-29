@@ -138,36 +138,73 @@
   transition: transform 0.3s ease;
 }
 
-.header__theme-btn:hover .header__theme-btn-hover {
-  transform: scale(1);
-}
-
-/* CTA Button */
+/* Header CV Button & Contact CTA Button */
+.header__cv-btn,
 .header__cta {
-  display: none;
-  padding: 0.5rem 1.25rem;
+  height: 2.5rem;
+  box-sizing: border-box;
+  padding: 0 1.25rem;
   border-radius: 9999px;
-  background-color: #AB886D;
-  color: #ffffff;
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.25s ease;
 }
 
 @media (min-width: 640px) {
+  .header__cv-btn,
   .header__cta {
-    display: block;
+    display: inline-flex;
   }
 }
 
+.header__cv-btn {
+  gap: 0.4rem;
+  padding: 0 1.1rem;
+  background-color: rgba(171, 136, 109, 0.12);
+  border: 1px solid rgba(171, 136, 109, 0.3);
+  color: #5A4A42;
+}
+
+.dark .header__cv-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #FAF7F3;
+}
+
+.header__cv-btn:hover {
+  background-color: rgba(171, 136, 109, 0.22);
+  transform: translateY(-1px);
+}
+
+.header__cv-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #5A4A42;
+}
+
+.dark .header__cv-icon {
+  color: #FAF7F3;
+}
+
+.header__cta {
+  background-color: #AB886D;
+  border: 1px solid transparent;
+  color: #ffffff;
+}
+
 .header__cta:hover {
-  background-color: #D9A299;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: #96745B;
+  box-shadow: 0 4px 12px rgba(171, 136, 109, 0.3);
+  transform: translateY(-1px);
 }
 
 .header__cta:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
 
 /* Hamburger Button */

@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
-import { TransitionSection } from './components/TransitionSection/TransitionSection';
 import { About } from './components/About/About';
+import { Projects } from './components/Projects/Projects';
+import { Experience } from './components/Experience/Experience';
 import { Skills } from './components/Skills/Skills';
 import { Expertise } from './components/Expertise/Expertise';
-import { Projects } from './components/Projects/Projects';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
 import { Theme } from './types';
@@ -46,9 +46,9 @@ const App: React.FC = () => {
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
-        <TransitionSection />
         <About />
         <Projects />
+        <Experience />
         <Skills />
         <Expertise />
         <Contact />

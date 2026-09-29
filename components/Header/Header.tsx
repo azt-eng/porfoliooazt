@@ -48,11 +48,12 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           {/* Desktop Nav */}
           <nav className="header__nav">
-            <a href="#about"     className={getLinkClass('about')}>À propos</a>
-            <a href="#projects"  className={getLinkClass('projects')}>Projets</a>
-            <a href="#skills"    className={getLinkClass('skills')}>Compétences</a>
-            <a href="#expertise" className={getLinkClass('expertise')}>Mon Approche</a>
-            <a href="#contact"   className={getLinkClass('contact')}>Contact</a>
+            <a href="#about"      className={getLinkClass('about')}>À propos</a>
+            <a href="#projects"   className={getLinkClass('projects')}>Projets</a>
+            <a href="#experience" className={getLinkClass('experience')}>Expériences</a>
+            <a href="#skills"     className={getLinkClass('skills')}>Compétences</a>
+            <a href="#expertise"  className={getLinkClass('expertise')}>Mon Approche</a>
+            <a href="#contact"    className={getLinkClass('contact')}>Contact</a>
           </nav>
 
           {/* Right Controls */}
@@ -69,10 +70,21 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
               <span className="header__theme-btn-hover" />
             </button>
 
-            {/* CTA */}
-            <a href="#contact" className="header__cta">
-              Me contacter
+            {/* CV Download CTA */}
+            <a
+              href="/CV_Karifala_Coulibaly.pdf"
+              download="CV_Karifala_Coulibaly.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="header__cv-btn"
+            >
+              <svg className="header__cv-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Mon CV</span>
             </a>
+
+
 
             {/* Hamburger */}
             <button
@@ -109,19 +121,23 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         </div>
 
         <nav className="mobile-menu__nav">
-          <a href="#about"     onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('about')}>À propos</a>
-          <a href="#projects"  onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('projects')}>Projets</a>
-          <a href="#skills"    onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('skills')}>Compétences</a>
-          <a href="#expertise" onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('expertise')}>Mon Approche</a>
-          <a href="#contact"   onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('contact')}>Contact</a>
+          <a href="#about"      onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('about')}>À propos</a>
+          <a href="#projects"   onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('projects')}>Projets</a>
+          <a href="#experience" onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('experience')}>Expériences</a>
+          <a href="#skills"     onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('skills')}>Compétences</a>
+          <a href="#expertise"  onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('expertise')}>Mon Approche</a>
+          <a href="#contact"    onClick={() => setIsMobileMenuOpen(false)} className={getMobileLinkClass('contact')}>Contact</a>
 
           <div className="mobile-menu__footer">
             <a
-              href="#contact"
+              href="/CV_Karifala_Coulibaly.pdf"
+              download="CV_Karifala_Coulibaly.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="mobile-menu__cta"
             >
-              Me contacter
+              Télécharger mon CV
             </a>
           </div>
         </nav>

@@ -133,6 +133,40 @@
   transform: scale(1.05);
 }
 
+/* Floating top-right link button */
+.projects__card-top-link {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.projects__card-top-link:hover {
+  background: #AB886D;
+  border-color: #AB886D;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(171, 136, 109, 0.4);
+}
+
+.projects__card-top-link-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
 /* Corps de la carte */
 .projects__card-body {
   padding: 1.5rem;
@@ -182,9 +216,33 @@
   color: #9ca3af;
 }
 
-.projects__card-footer {
-  padding-top: 0.5rem;
-  margin-top: auto;
+.projects__card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.projects__card-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: #AB886D;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(171, 136, 109, 0.3);
+}
+
+.projects__card-link-btn:hover {
+  background-color: #967257;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(171, 136, 109, 0.5);
 }
 
 .projects__card-btn {
@@ -203,8 +261,8 @@
 }
 
 .projects__card:hover .projects__card-btn {
-  background-color: #AB886D;
-  color: #ffffff;
+  background-color: rgba(171, 136, 109, 0.2);
+  color: #AB886D;
 }
 
 .projects__card-btn-icon {
@@ -463,11 +521,8 @@
   letter-spacing: 0.05em;
 }
 
-.project-modal__actions {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 1rem;
-  border-top: 1px solid #e5e7eb;
+.project-modal__actions-top {
+  margin-bottom: 1.5rem;
 }
 
 .dark .project-modal__actions {

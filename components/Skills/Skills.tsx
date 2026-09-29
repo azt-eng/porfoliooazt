@@ -1,5 +1,5 @@
 import React from 'react';
-import { SKILLS } from '../../constants';
+import { SKILL_CATEGORIES } from '../../constants';
 import './Skills.css';
 
 export const Skills: React.FC = () => {
@@ -14,26 +14,30 @@ export const Skills: React.FC = () => {
             <span className="skills__title-muted">compétences.</span>
           </h2>
           <p className="skills__subtitle">
-            Les compétences que j'ai et que je développe au cours de mes différents projets.
+            Mes domaines d'expertise organisés par catégorie.
           </p>
         </div>
 
-        {/* Grille de cartes */}
-        <div className="skills__grid">
-          {SKILLS.map((skill, index) => (
-            <div key={index} className="skills__card">
-              {/* Texte */}
-              <div className="skills__card-content">
-                <p className="skills__card-label">Compétence</p>
-                <h3 className="skills__card-name">{skill.name}</h3>
-                {skill.description && (
-                  <p className="skills__card-desc">{skill.description}</p>
-                )}
+        {/* Grille de catégories */}
+        <div className="skills__categories-grid">
+          {SKILL_CATEGORIES.map((cat, index) => (
+            <div key={index} className="skills__category-card">
+              <div className="skills__category-header">
+                <span className="skills__category-icon">{cat.icon}</span>
+                <div>
+                  <h3 className="skills__category-title">{cat.title}</h3>
+                  {cat.description && (
+                    <p className="skills__category-desc">{cat.description}</p>
+                  )}
+                </div>
               </div>
 
-              {/* Icône */}
-              <div className="skills__card-icon">
-                <span className="skills__card-emoji">{skill.icon}</span>
+              <div className="skills__items-list">
+                {cat.items.map((item, itemIdx) => (
+                  <span key={itemIdx} className="skills__item-tag">
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
           ))}

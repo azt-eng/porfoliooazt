@@ -70,18 +70,68 @@ export const About: React.FC = () => {
             <h2 className="about__title">Qui suis-je ?</h2>
             <div className="about__paragraphs">
               <p className="about__paragraph">
-                J'ai 21 ans je suis actuellement en Bachelor développeur Web, mon objectif est de devenir chef de projet.
+                J'ai 22 ans et je suis actuellement étudiant en Marketing Web. Mon objectif premier est de m'épanouir et d'exceller en tant que Chef de Projet Web.
               </p>
               <p className="about__paragraph">
-                J'aime apprendre de nouvelles choses, travailler sur mes projets et développer constamment mes compétences techniques.
+                J'aime apprendre de nouvelles notions, concevoir des projets numériques de A à Z et développer continuellement mes compétences techniques ainsi que managériales.
               </p>
               <p className="about__paragraph">
-                Passer d'une idée anodine au départ à un vrai projet est un sentiment que j'aime particulièrement, construire essayer rater, recommencer et réussir elles font partie de ce challenge.
+                Passer d'une idée anodine au départ à un vrai projet opérationnel est un accomplissement stimulant : construire, expérimenter, réajuster et concrétiser font partie intégrante de ce challenge.
               </p>
             </div>
           </motion.div>
 
         </div>
+
+        {/* Banner CTA Découvrir mes projets & mes compétences */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          viewport={{ once: true }}
+          className="about__cta-banner"
+        >
+          {/* Icon & Texte */}
+          <div className="about__cta-info">
+            <div className="about__cta-icon">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 11l1 2 2.5.5-1.8 1.7.5 2.5-2.2-1.2-2.2 1.2.5-2.5-1.8-1.7 2.5-.5 1-2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="about__cta-title">Découvrir mes projets &amp; mes compétences</h3>
+              <p className="about__cta-subtitle">Explorez mes réalisations interactives.</p>
+            </div>
+          </div>
+
+          {/* Boutons connectés */}
+          <div className="about__cta-buttons">
+            <a
+              href="/CV_Karifala_Coulibaly.pdf"
+              download="CV_Karifala_Coulibaly.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about__btn-cv"
+            >
+              <svg className="about__btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Télécharger mon CV
+            </a>
+
+            <a
+              href="#projects"
+              className="about__btn-projects"
+            >
+              Découvrir mes projets
+              <svg className="about__btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

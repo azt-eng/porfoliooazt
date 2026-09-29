@@ -16,6 +16,20 @@ export const Contact: React.FC = () => {
 
           {/* Boutons */}
           <div className="contact__btn-group">
+            {/* Télécharger mon CV */}
+            <a
+              href="/CV_Karifala_Coulibaly.pdf"
+              download="CV_Karifala_Coulibaly.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact__btn contact__btn--cv"
+            >
+              <svg className="contact__cv-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Télécharger mon CV
+            </a>
+
             {/* Email */}
             <a
               href="mailto:kriffpro@gmail.com"

@@ -6,22 +6,41 @@ const EXPERTISE_ITEMS = [
   {
     id: 'architecture',
     title: 'Mon Avenir Professionnel',
-    description: "Je suis actuellement en cursus de développeur Web.\n\nPourquoi choisir cette voie alors que je veux faire chef de projet ?\n\nJ'ai d'abord envie de me former sur l'aspect technique, puis sur l'aspect produit, ce sont deux penchants importants du métier. Aucun des deux n'est à sous-estimer. J'aimerais comprendre les deux au maximum pour pouvoir être le plus polyvalent et apporter des solutions. Peu importe le problème.",
+    description: "Pourquoi le Web Marketing pour aller à chef de projet ?\n\nAprès un cursus initial en développement web, cette formation marketing et produit me confère une double casquette essentielle : comprendre le code en profondeur pour concevoir des spécifications réalistes, et maîtriser le produit pour maximiser l'impact utilisateur.\n\nÀ la recherche d'une **alternance** pour début octobre, je souhaite m'investir pleinement et avancer professionnellement.",
     image: '/expertise_1.jpg'
   },
   {
     id: 'frontend',
     title: 'Autres Experiences Professionnelles',
-    description: "J'ai été animateur pendant trois années en ecole primaire et maternelle. J'ai aussi fait de la mise en rayon et de la logistique à Monoprix, ainsi que coach adjoint dans un club de basket. Ces expériences m'ont appris beaucoup sur le monde professionnel.\n\nQue ce soit le travail en équipe, le relationnel, avoir des responsabilités, remplir des attentes, ou gérer un projet pour le réussir.",
+    description: "**Animateur pendant 3 ans** en école primaire et maternelle, j'ai développé une grande réactivité, l'écoute et l'aptitude à fédérer un groupe. Ces qualités se sont consolidées lors de missions logistiques chez Monoprix et comme coach adjoint en club de basket.\n\nCes expériences m'ont appris beaucoup sur le monde professionnel. Que ce soit le travail en équipe, le relationnel, avoir des responsabilités, remplir des attentes, ou gérer un projet pour le réussir.",
     image: '/expertise_2.jpeg'
   },
   {
     id: 'backend',
     title: 'Mes Passions',
-    description: "Les jeux video font partie de mes passions depuis petit. Que ce soit les jeux Mario en passant par les Zelda, en explorant des villes comme Night City avec Cyberpunk ou l'espace dans No Man's Sky, le jeu video m'a beaucoup appris : la creativite, la reflexion et la cooperation.\n\nLa musique et les sneakers rythment mon quotidien. La musique occupe une grande place pour moi, elle m'aide a me concentrer.\n\nEt pour finir, le basket, qui est le sport que j'ai le plus pratique. C'est une vraie passion qui me suit depuis mes plus jeunes annees jusqu'a aujourd'hui.",
+    description: "Les jeux vidéo (de Zelda à Cyberpunk) nourrissent mon esprit d'analyse systémique, la recherche d'ergonomie intuitive et la résolution de problématiques complexes.\n\nLa culture sneakers et la musique rythment mon dynamisme quotidien, tandis que le basket-ball reste mon terrain d'apprentissage préféré pour la cohésion d'équipe, la résilience et la communication instantanée.",
     image: '/expertise_3.jpeg'
   }
 ];
+
+const renderFormattedText = (text: string) => {
+  const paragraphs = text.split('\n\n');
+  return paragraphs.map((para, i) => {
+    const isHeading = i === 0 && (para.endsWith('?') || para.length < 35);
+    const parts = para.split(/(\*\*.*?\*\*)/g);
+
+    return (
+      <p key={i} className={isHeading ? 'expertise__content-heading' : 'expertise__content-paragraph'}>
+        {parts.map((part, idx) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={idx}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        })}
+      </p>
+    );
+  });
+};
 
 export const Expertise: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -130,12 +149,7 @@ export const Expertise: React.FC = () => {
                           className="expertise__item-content-wrapper"
                         >
                           <div className="expertise__item-content">
-                            <span className="expertise__item-content-bold">
-                              {item.description.split('. ')[0]}.{' '}
-                            </span>
-                            <span className="expertise__item-content-rest">
-                              {item.description.substring(item.description.indexOf('. ') + 2)}
-                            </span>
+                            {renderFormattedText(item.description)}
                           </div>
                         </motion.div>
                       )}
