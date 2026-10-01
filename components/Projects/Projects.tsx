@@ -13,6 +13,23 @@ const PROJECTS: Project[] = [
     link: "https://stk-digigame.vercel.app/"
   },
   {
+    id: 10,
+    title: "Créas digital",
+    description: "Cet espace est dédié aux créations digitales que j’ai pu faire pour des projets ou durant mes stages.",
+    tags: ["Canva", "Figma", "UI/UX", "Créations"],
+    image: "/projects/creas_digital.png",
+    subLinks: [
+      {
+        title: "Stage IdGarages",
+        url: "https://canva.link/qand9g1ez29tu6b"
+      },
+      {
+        title: "Projet STK",
+        url: "https://www.figma.com/board/sFV1pqItmgOBzaPkowkXkW/stk?node-id=0-1&t=srm5zPnLsdauC00Q-1"
+      }
+    ]
+  },
+  {
     id: 8,
     title: "Station cyberpunk",
     description: "J'ai coordonné une équipe de 4 personnes pour créer une expérience 3d.\n\nJ'ai fait :\n- conception de la scène, ambiance sonore\n- conception de la gamification\n- création d'une maquette\n- gestion des tâches de chacun, des rendus et des deadlines",
@@ -98,13 +115,13 @@ export const Projects: React.FC = () => {
           onScroll={handleScroll}
           className="projects__scroll"
         >
-          {PROJECTS.map((project, index) => (
+          {PROJECTS.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
               className="projects__card"
             >
-              {/* Image & Floating Top-Right Link */}
+              {/* Image & Floating Top-Right Links */}
               <div className="projects__card-image-wrapper">
                 <img
                   src={project.image}
@@ -113,21 +130,40 @@ export const Projects: React.FC = () => {
                   className="projects__card-image"
                 />
 
-                {project.link && project.link !== "#" && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="projects__card-top-link"
-                    title="Visiter le lien"
-                  >
-                    Visiter le lien
-                    <svg className="projects__card-top-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                )}
+                <div className="projects__card-top-links-wrapper">
+                  {project.subLinks && project.subLinks.length > 0 ? (
+                    project.subLinks.map((sub, idx) => (
+                      <a
+                        key={idx}
+                        href={sub.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="projects__card-top-link"
+                        title={sub.title}
+                      >
+                        {sub.title}
+                        <svg className="projects__card-top-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    ))
+                  ) : project.link && project.link !== "#" ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="projects__card-top-link"
+                      title="Visiter le lien"
+                    >
+                      Visiter le lien
+                      <svg className="projects__card-top-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ) : null}
+                </div>
               </div>
 
               {/* Corps */}
@@ -248,8 +284,25 @@ export const Projects: React.FC = () => {
               <div className="project-modal__content">
                 <h3 className="project-modal__name">{selectedProject.title}</h3>
 
-                {/* Lien externe (Remonté en haut) */}
-                {selectedProject.link && selectedProject.link !== "#" && (
+                {/* Liens externes (Remontés en haut) */}
+                {selectedProject.subLinks && selectedProject.subLinks.length > 0 ? (
+                  <div className="project-modal__actions-top" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    {selectedProject.subLinks.map((sub, idx) => (
+                      <a
+                        key={idx}
+                        href={sub.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-modal__link"
+                      >
+                        {sub.title}
+                        <svg className="project-modal__link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    ))}
+                  </div>
+                ) : selectedProject.link && selectedProject.link !== "#" ? (
                   <div className="project-modal__actions-top">
                     <a
                       href={selectedProject.link}
@@ -263,12 +316,28 @@ export const Projects: React.FC = () => {
                       </svg>
                     </a>
                   </div>
-                )}
+                ) : null}
 
                 {/* Description */}
                 <div className="project-modal__section">
                   <h4 className="project-modal__section-label">À propos du projet</h4>
                   <p className="project-modal__desc">{selectedProject.description}</p>
+
+                  {selectedProject.subLinks && selectedProject.subLinks.length > 0 && (
+                    <div style={{ marginTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+                      {selectedProject.subLinks.map((sub, i) => (
+                        <a
+                          key={i}
+                          href={sub.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#AB886D', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.95rem' }}
+                        >
+                          <span>🔗 <strong>{sub.title}</strong> : {sub.url}</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Tags */}

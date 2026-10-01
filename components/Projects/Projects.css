@@ -133,12 +133,19 @@
   transform: scale(1.05);
 }
 
-/* Floating top-right link button */
-.projects__card-top-link {
+/* Floating top-right link buttons */
+.projects__card-top-links-wrapper {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.projects__card-top-link {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;

@@ -12,13 +12,19 @@ export interface SkillCategory {
   items: string[];
 }
 
+export interface ProjectSubLink {
+  title: string;
+  url: string;
+}
+
 export interface Project {
   id: number;
   title: string;
   description: string;
   tags: string[];
   image: string;
-  link: string;
+  link?: string;
+  subLinks?: ProjectSubLink[];
 }
 
 export interface ProfessionalProject {
