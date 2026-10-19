@@ -6,7 +6,7 @@ const EXPERTISE_ITEMS = [
   {
     id: 'architecture',
     title: 'Mon Avenir Professionnel',
-    description: "Pourquoi le Web Marketing pour aller à chef de projet ?\n\nAprès un cursus initial en développement web, cette formation marketing et produit me confère une double casquette essentielle : comprendre le code en profondeur pour concevoir des spécifications réalistes, et maîtriser le produit pour maximiser l'impact utilisateur.\n\nÀ la recherche d'une **alternance** pour début octobre, je souhaite m'investir pleinement et avancer professionnellement.",
+    description: "Pourquoi le Web Marketing pour aller à chef de projet ?\n\nAprès un cursus initial en développement web, cette formation en Marketing Digital & UX  me confère une double casquette essentielle : comprendre le code et pour concevoir des solutions réalistes, et maîtriser le produit pour maximiser l'impact utilisateur.\n\nÀ la recherche d'une **alternance** pour début octobre, je souhaite m'investir pleinement et avancer professionnellement.",
     image: '/expertise_1.jpg'
   },
   {
